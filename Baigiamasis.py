@@ -17,8 +17,7 @@ for result in results:
     url = result.find('a')['href']
     records.append(url)
 df = pd.DataFrame(records, columns=['Nuorodos'])
-df.to_csv('Naujausios_detales.csv', index = False, sep=',', encoding = 'utf-8')
-df.reset_index(drop=True)
+df.to_csv('Naujausios_detales.csv',mode='a', index = False, header=False, sep=',', encoding = 'utf-8')
         
 #Duplicate removal        
 
